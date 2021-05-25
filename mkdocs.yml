@@ -4,3 +4,15 @@ theme:
   favicon: assets/favicon.png
   icon:
     logo: material/flag
+  features:
+    - navigation.instant
+    - navigation.top
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode

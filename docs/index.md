@@ -1,8 +1,8 @@
 # Welcome!
 
-I will put here all my write ups from TryHackMe, HackTheBox, CTFs... Also i will put them <a href="https://github.com/anthares101/write-ups" target="_blank">here</a> where you can find some extra resources
+I will put here all my write ups from TryHackMe, HackTheBox, CTFs... Also i will put them <a href="https://github.com/anthares101/write-ups" target="_blank">here</a> where you can find some extra resources. If you want more, i also have <a href="https://github.com/anthares101/my_cybersecurity_notes" target="_blank">this</a> repository with useful information that i have been collecting while i learn.
 
-## A bit about me
+# A bit about me
 
 I studied Computer Science Engineering at Córdoba University. I am a member of the Free Software Group, possibly the best thing I have done in my career. I love cybersecurity and development, especially videogames, although I am always open to other areas such as numerical analysis or AI.
 
