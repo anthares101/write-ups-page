@@ -1,0 +1,5 @@
+site_name: Anthares WriteUps
+theme:
+  name: material
+  icon:
+    logo: material/flag
