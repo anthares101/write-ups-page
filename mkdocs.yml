@@ -1,10 +1,17 @@
 site_name: Anthares WriteUps
+site_author: Ángel Heredia
+site_description: A little page to mainly show my write ups in a pretty way
+
+repo_name: Github Repository
+repo_url: https://github.com/anthares101/anthares101.github.io
+
 theme:
   name: material
   favicon: assets/favicon.png
   icon:
     logo: material/flag
   features:
+    - navigation.tabs
     - navigation.instant
     - navigation.top
   palette:
@@ -16,3 +23,14 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/anthares101
+    - icon: fontawesome/regular/flag
+      link: https://ctftime.org/team/133772
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/anthares101
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/angelherediaperez
