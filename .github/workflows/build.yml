@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Deploy docs
+    name: Publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
@@ -16,4 +16,4 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+          CUSTOM_DOMAIN: anthares101.github.io
