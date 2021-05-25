@@ -1,5 +1,6 @@
 site_name: Anthares WriteUps
 theme:
   name: material
+  favicon: assets/favicon.png
   icon:
     logo: material/flag
