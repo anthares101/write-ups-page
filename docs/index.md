@@ -1,6 +1,6 @@
 # Welcome!
 
-I will put here all my write ups from TryHackMe, HackTheBox, CTFs... Also i will put them <a href="https://github.com/anthares101/write-ups" target="_blank">here</a> where you can find some extra resources. If you want more, i also have <a href="https://github.com/anthares101/my_cybersecurity_notes" target="_blank">this</a> repository with useful information that i have been collecting while i learn.
+I will put here all my write ups from TryHackMe, HackTheBox, CTFs... Also I will put them <a href="https://github.com/anthares101/write-ups" target="_blank">here</a> where you can find some extra resources. If you want more, I also have <a href="https://github.com/anthares101/my_cybersecurity_notes" target="_blank">this</a> repository with useful information that I have been collecting while I learn.
 
 # A bit about me
 
