@@ -2,6 +2,74 @@
 
 [Link to the room](https://tryhackme.com/room/wonderland)
 
+## Nmap scan
+
+```
+# Nmap 7.91 scan initiated Mon Mar  8 11:54:32 2021 as: nmap -sC -sV -oN nmap.txt 10.10.176.220
+Nmap scan report for 10.10.176.220
+Host is up (0.082s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 8e:ee:fb:96:ce:ad:70:dd:05:a9:3b:0d:b0:71:b8:63 (RSA)
+|   256 7a:92:79:44:16:4f:20:43:50:a9:a8:47:e2:c2:be:84 (ECDSA)
+|_  256 00:0b:80:44:e6:3d:4b:69:47:92:2c:55:14:7e:2a:c9 (ED25519)
+80/tcp open  http    Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+|_http-title: Follow the white rabbit.
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Mar  8 11:54:54 2021 -- 1 IP address (1 host up) scanned in 21.96 seconds
+```
+
+## Gobuster scan
+
+I noticed that maybe that `r` directory could end up forming a word so i started scanning:
+
+```
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.176.220/
+[+] Threads:        10
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2021/03/08 11:57:50 Starting gobuster
+===============================================================
+/img (Status: 301)
+/r (Status: 301)
+===============================================================
+2021/03/08 11:59:29 Finished
+===============================================================
+```
+
+```
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.176.220/r
+[+] Threads:        10
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2021/03/08 12:00:12 Starting gobuster
+===============================================================
+/a (Status: 301)
+===============================================================
+2021/03/08 12:01:10 Finished
+===============================================================
+```
+
+At the end, the url looks like form "rabbit": http://10.10.176.220/r/a/b/b/i/t/
+
 ## Looking around the rabbit hole
 
 After getting into http://10.10.176.220/r/a/b/b/i/t/ and inspecting the page i found a hidden p tag with this in it:

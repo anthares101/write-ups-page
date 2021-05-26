@@ -17,6 +17,7 @@ theme:
     - navigation.tabs
     - navigation.instant
     - navigation.top
+    - navigation.sections
   palette:
     - scheme: default
       toggle:
