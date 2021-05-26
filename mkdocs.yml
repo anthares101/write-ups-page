@@ -35,7 +35,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/anthares101
-    - icon: fontawesome/regular/flag
+    - icon: custom/ctftime
       link: https://ctftime.org/team/133772
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/anthares101
@@ -44,3 +44,9 @@ extra:
 
 markdown_extensions:
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
