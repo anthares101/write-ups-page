@@ -6,7 +6,7 @@
 
 The first question is about who robbed the bank, the answer is in the first article of the webpage: `spiderman` lul.
 
-Next the the Joomla version, i just checked `/administrator/manifests/files/joomla.xml` to get that the version being used in `3.7.0`. Looking it in `searchsploit` looks like we can work with that:
+Next the Joomla version, i just checked `/administrator/manifests/files/joomla.xml` to get that the version being used is `3.7.0`. Looking it in `searchsploit` looks like we can work with that:
 ```
 ┌──(kali㉿kali)-[~]
 └─$ searchsploit joomla 3.7.0          

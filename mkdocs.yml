@@ -57,3 +57,7 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+          
+plugins:
+  - section-index
+
