@@ -1,3 +1,7 @@
+---
+description: Asserted Nahamcon 2021 challenge write up.
+---
+
 # Asserted
 
 ## Trying things

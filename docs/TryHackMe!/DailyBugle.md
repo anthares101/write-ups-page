@@ -1,3 +1,7 @@
+---
+description: DailyBugle box from TryHackMe! write up.
+---
+
 # DailyBugle
 
 [Link to the room](https://tryhackme.com/room/dailybugle)

@@ -1,3 +1,7 @@
+---
+description: Hide & eXec [300] Reply CTF Challenge 2020 challenge write up.
+---
+
 # Hide & eXec [300]
 
 The zip contains an image and a protected zip file. The image is some kind of bar code that after decoding will give you a code in some programing language: Java, Bash, Python, Javascript, PHP or Brainfuck (Yeah, im serious). This code will print the password for the protected zip after execution and after extract it we will get... another bar code and another protected zip file (Repeat this a lot of times)

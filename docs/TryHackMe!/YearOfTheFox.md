@@ -1,3 +1,7 @@
+---
+description: YearOfTheFox box from TryHackMe! write up.
+---
+
 # YearOfTheFox
 
 [Link to the room](https://tryhackme.com/room/yotf)

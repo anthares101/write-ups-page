@@ -1,3 +1,7 @@
+---
+description: Relevant box from TryHackMe! write up.
+---
+
 # Relevant
 
 [Link to the room](https://tryhackme.com/room/relevant)

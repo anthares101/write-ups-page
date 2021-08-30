@@ -1,3 +1,7 @@
+---
+description: PasswordCheck HacktoberCTF 2020 challenge write up.
+---
+
 # PasswordCheck
 
 Using the have i been pwned? API we wrote a program that will check every password hash provided and check how many times a certain password was compromised. After processing all the hashes, the program will check the most compromised hash and return the that hash and the number of times compromised.

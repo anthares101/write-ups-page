@@ -1,3 +1,7 @@
+---
+description: YearOfTheJellyfish box from TryHackMe! write up.
+---
+
 # YearOfTheJellyfish
 
 ## Let's start enumerating

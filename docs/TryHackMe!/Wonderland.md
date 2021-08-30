@@ -1,3 +1,7 @@
+---
+description: Wonderland box from TryHackMe! write up.
+---
+
 # Wonderland
 
 [Link to the room](https://tryhackme.com/room/wonderland)

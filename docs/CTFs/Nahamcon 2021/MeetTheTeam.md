@@ -1,3 +1,7 @@
+---
+description: MeetTheTeam Nahamcon 2021 challenge write up.
+---
+
 # MeetTheTeam
 
 Looks like the page has actually the version control software public:

@@ -1,3 +1,7 @@
+---
+description: Internal box from TryHackMe! write up.
+---
+
 # Internal
 
 [Link to the room](https://tryhackme.com/room/internal) (Add `internal.thm` to `hosts` file before start!)

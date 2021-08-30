@@ -1,3 +1,7 @@
+---
+description: AdventOfCyber2 room from TryHackMe! write up.
+---
+
 # AdventOfCyber2
 
 ## Task 29
