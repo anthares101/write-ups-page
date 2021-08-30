@@ -22,8 +22,8 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue
-      accent: blue
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
