@@ -60,4 +60,4 @@ markdown_extensions:
           
 plugins:
   - section-index
-
+  - search
