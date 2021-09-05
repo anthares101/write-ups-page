@@ -1,8 +1,9 @@
 ---
+title: Relevant
 description: Relevant box from TryHackMe! write up.
 ---
 
-# Relevant
+# Relevant <a href='/assets/resources/TryHackMe!/Relevant-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
 
 [Link to the room](https://tryhackme.com/room/relevant)
 

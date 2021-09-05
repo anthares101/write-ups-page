@@ -8,7 +8,7 @@ Cybersecurity training site where you can have access to a lot of challenges. He
 
 <p align="center">
   <a href="https://tryhackme.com/" target="_blank">
-    <img width="300px" alt="THM logo" src="/assets/images/thm-logo.png">
+    <img width="300px" alt="THM logo" src="/assets/images/TryHackMe!/thm-logo.png">
   </a>
 </p>
 

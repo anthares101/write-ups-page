@@ -1,8 +1,9 @@
 ---
+title: Wonderland
 description: Wonderland box from TryHackMe! write up.
 ---
 
-# Wonderland
+# Wonderland <a href='/assets/resources/TryHackMe!/Wonderland-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
 
 [Link to the room](https://tryhackme.com/room/wonderland)
 

@@ -1,8 +1,9 @@
 ---
+title: YearOfTheJellyfish
 description: YearOfTheJellyfish box from TryHackMe! write up.
 ---
 
-# YearOfTheJellyfish
+# YearOfTheJellyfish <a href='/assets/resources/TryHackMe!/YearOfTheJellyfish-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
 
 ## Let's start enumerating
 

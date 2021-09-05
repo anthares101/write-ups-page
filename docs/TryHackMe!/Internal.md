@@ -1,8 +1,9 @@
 ---
+title: Internal
 description: Internal box from TryHackMe! write up.
 ---
 
-# Internal
+# Internal <a href='/assets/resources/TryHackMe!/Internal-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
 
 [Link to the room](https://tryhackme.com/room/internal) (Add `internal.thm` to `hosts` file before start!)
 

@@ -129,7 +129,7 @@ bloodhound-python -u sandra -p Password1234! -ns <MACHINE_IP> -d megacorp.local 
 
 Once we upload the information to BloodHound we can check for attack vectors. The `Find Principals with DCSync Rights` query returned something insteresting:
 
- <p align="center"><img alt="Screenshot with the BloodHound query result" src="/assets/images/write-ups/htb/Pathfinder-DCSyncRights.png"></p>
+ <p align="center"><img alt="Screenshot with the BloodHound query result" src="/assets/images/HackTheBox/Pathfinder/DCSyncRights.png"></p>
 
 `SVC_BES` user has `GetChanges` and `GetChangesAll` privileges so we can perform a `dsync` attack from that user to get a list of the domain users secrets. Let's check if that user has Kerberos pre-authentication enabled:
 

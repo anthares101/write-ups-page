@@ -8,6 +8,6 @@ Cybersecurity capture the flag competitions where the participants will try to s
 
 <p align="center">
   <a href="https://ctftime.org/" target="_blank">
-    <img width="300px" alt="CTFtime logo" src="/assets/images/ctftime-logo.svg">
+    <img width="300px" alt="CTFtime logo" src="/assets/images/CTFs/ctftime-logo.svg">
   </a>
 </p>

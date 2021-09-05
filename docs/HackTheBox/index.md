@@ -8,7 +8,7 @@ Cybersecurity training site where you can have access to a lot of challenges. He
 
 <p align="center">
   <a href="https://www.hackthebox.eu/" target="_blank">
-    <img width="250px" alt="HTB logo" src="/assets/images/htb-logo.png">
+    <img width="250px" alt="HTB logo" src="/assets/images/HackTheBox/htb-logo.png">
   </a>
 </p>
 

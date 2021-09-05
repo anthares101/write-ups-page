@@ -1,8 +1,9 @@
 ---
+title: YearOfTheFox
 description: YearOfTheFox box from TryHackMe! write up.
 ---
 
-# YearOfTheFox
+# YearOfTheFox <a href='/assets/resources/TryHackMe!/YearOfTheFox-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
 
 [Link to the room](https://tryhackme.com/room/yotf)
 

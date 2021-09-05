@@ -1,8 +1,9 @@
 ---
+title: Oopsie
 description: Oopsie box from HackTheBox write up.
 ---
 
-# Oopsie
+# Oopsie <a href='/assets/resources/HackTheBox/Oopsie-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
 
 ## nmap scan
 
