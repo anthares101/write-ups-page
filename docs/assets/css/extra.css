@@ -1,0 +1,16 @@
+input {
+    background-color: var(--md-default-fg-color--lightest);
+}
+
+button {
+    color: var(--md-default-fg-color);
+    margin-left: 5px;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    padding: 5px;
+    cursor: pointer;
+}
+
+button:hover, button:focus {
+  background-color: var(--md-default-fg-color--lightest);
+}
