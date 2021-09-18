@@ -13,7 +13,7 @@ theme:
     logo: material/flag
   features:
     - navigation.tabs
-    - navigation.instant
+    # - navigation.instant
     - navigation.top
     - navigation.sections
   palette:
@@ -68,6 +68,6 @@ plugins:
       summary: 'This content is protected'
       placeholder: ''
       encryption_info_message: 'Use the root flag as password'
-      tag_encrypted_page: True
+      remember_password: True
       encrypted_something:
             md-nav md-nav--secondary: [nav, class]
