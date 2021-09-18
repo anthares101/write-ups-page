@@ -4,7 +4,7 @@ description: Lame box from HackTheBox write up.
 
 # Lame
 
-## nmap scan
+## Nmap scan
 
 As usual let's start with `nmap`:
 
