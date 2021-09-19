@@ -1,5 +1,5 @@
 ---
-description: Here you can find all the write ups i have written solving some of the Reply CTF Challenge 2020 challenges.
+description: Here you can find all the write ups I have written solving some of the Reply CTF Challenge 2020 challenges.
 ---
 
 # Reply CTF Challenge 2020

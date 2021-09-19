@@ -1,5 +1,5 @@
 ---
-description: Here you can find all the write ups i have written solving some of the Nahamcon 2021 challenges.
+description: Here you can find all the write ups I have written solving some of the Nahamcon 2021 challenges.
 ---
 
 # Nahamcon 2021

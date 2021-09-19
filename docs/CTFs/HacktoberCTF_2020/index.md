@@ -1,5 +1,5 @@
 ---
-description: Here you can find all the write ups i have written solving some of the HacktoberCTF 2020 challenges.
+description: Here you can find all the write ups I have written solving some of the HacktoberCTF 2020 challenges.
 ---
 
 # HacktoberCTF 2020
