@@ -1,6 +1,6 @@
 ---
 title: Little Tommy
-description: Little Tommy box from HackTheBox write up.
+description: Little Tommy challenge from HackTheBox write up.
 password: 'HTB{I_am_so_heaped_up_right_now}'
 ---
 
