@@ -57,6 +57,7 @@ markdown_extensions:
       options:
         custom_icons:
           - overrides/.icons
+  - pymdownx.superfences
           
 plugins:
   - section-index

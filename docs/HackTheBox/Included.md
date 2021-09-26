@@ -58,7 +58,7 @@ Ok so maybe we are starting to get our luck back, looks like we have a `tftp` se
 
 Instead of using the `tftp` client I preferred Python with the library `tftpy`
 
-```bash
+```python
 #! /usr/bin/env python3
 
 import tftpy
