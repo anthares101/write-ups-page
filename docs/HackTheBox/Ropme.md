@@ -140,7 +140,7 @@ It is prepared to be able to launch the attack against the local and the remote 
 
 ## Exploit time!
 
-Now we need to know what is the `glibc` version of the server. Using https://libc.rip/ we can enter the leaked memory address and the symbol's name: `puts` to get what we want:
+Now we need to know what is the `glibc` version of the server. Using [https://libc.rip/](https://libc.rip/){:target="_blank"}, we can enter the leaked memory address and the symbol's name: `puts` to get what we want:
 
 ```
 libc6_2.23-0ubuntu11_amd64
@@ -154,9 +154,9 @@ libc6_2.13-0ubuntu4_amd64
 libc6_2.13-0ubuntu15_amd64
 ```
 
-Clicking in the versions we can check the base address of the `puts` symbol: `0x6f690` also we can get the addreses for `system`: `0x45390` and the `/bin/sh` string as `str_bin_sh`: `0x18cd17` (I needed some try and error for this last one)
+Clicking in the versions we can check the base address of the `puts` symbol: `0x6f690`, also we can get the addreses for `system`: `0x45390` and the `/bin/sh` string as `str_bin_sh`: `0x18cd17` (I needed some try and error for this last one).
 
-With all this information we can add to our previous exploit a new section where instead of executing the `puts` version to leak an address we can execute the `system` function with `/bin/sh` as parameter. To get any `glibc` address we have to first get the library offset: `puts_leaked_address - puts_base_address` and then we can just get any address doing: `function_base_address + offset`. I included as resource the complete Python script I used to exploit the binary: 
+With all this information, we can add to our previous exploit a new section where, instead of executing the `puts` version to leak an address, we can execute the `system` function with `/bin/sh` as parameter. To get any `glibc` address, we have to first get the library offset: `puts_leaked_address - puts_base_address` and then we can just get any address doing: `function_base_address + offset`. I included as resource the complete Python script I used to exploit the binary: 
 
 ```bash
 ┌──(kali㉿kali)-[~/Desktop/HTB/Ropme]
