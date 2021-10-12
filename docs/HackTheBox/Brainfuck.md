@@ -144,19 +144,19 @@ A1 OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT
 ```
 
 Cool, we are in. Let's check the emails! (I will go with the manual way):
-- Once logged in, using `n namespace` we can check the namespaces we have.
+- Once logged in, using `n namespace` we can check the namespaces we have:
 ```bash
 n namespace
 * NAMESPACE (("" "/")) NIL NIL
 n OK Namespace completed.
 ```
-- Now we have to list the folders we have inside the namespace, in our case we need: `A1 list "" "*"`.
+- Now we have to list the folders we have inside the namespace, in our case we need: `A1 list "" "*"`:
 ```bash
 A1 list "" "*"
 * LIST (\HasNoChildren) "/" INBOX
 A1 OK List completed (0.000 + 0.000 secs).
 ```
-- Cool, in this case only the `INBOX` folder is available so: `g21 SELECT "INBOX"`.
+- Cool, in this case only the `INBOX` folder is available so: `g21 SELECT "INBOX"`:
 ```bash
 g21 SELECT "INBOX"
 * FLAGS (\Answered \Flagged \Deleted \Seen \Draft)
@@ -169,7 +169,7 @@ g21 SELECT "INBOX"
 * OK [HIGHESTMODSEQ 6] Highest
 g21 OK [READ-WRITE] Select completed (0.000 + 0.000 secs).
 ```
-- Let's see what emails ids we have with `s search ALL`.
+- Let's see what emails ids we have with `s search ALL`:
 ```bash
 s search ALL
 * SEARCH 1 2
