@@ -144,6 +144,7 @@ A1 OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT
 ```
 
 Cool, we are in. Let's check the emails! (I will go with the manual way):
+
 - Once logged in, using `n namespace` we can check the namespaces we have:
 ```bash
 n namespace
@@ -175,7 +176,6 @@ s search ALL
 * SEARCH 1 2
 s OK Search completed (0.001 + 0.000 secs).
 ```
-
 - Now to see the emails use: `F1 fetch <email_id> RFC822` and the email will be displayed.
 
 The email with the id number 2 is interesting:
