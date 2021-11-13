@@ -1,3 +1,7 @@
+---
+hide: navigation
+---
+
 # Welcome!
 
 I will put here all my write ups from TryHackMe, HackTheBox, CTFs... If you want more, I also have [this](https://github.com/anthares101/my-cybersecurity-notes){:target="_blank"} repository with useful information that I have been collecting while I learn.
