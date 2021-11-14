@@ -1,6 +1,6 @@
 ---
 description: You know 0xDiablos challenge from HackTheBox write up.
-password: 'HTB{0ur_Buff3r_1s_not_healthy}'
+password: HTB{0ur_Buff3r_1s_not_healthy}
 ---
 
 # You know 0xDiablos

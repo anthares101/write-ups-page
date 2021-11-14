@@ -1,7 +1,7 @@
 ---
 title: Under Construction
 description: Under Construction box from HackTheBox write up.
-password: 'HTB{d0n7_3xp053_y0ur_publ1ck3y}'
+password: HTB{d0n7_3xp053_y0ur_publ1ck3y}
 ---
 
 # Under Construction <a href='/assets/resources/HackTheBox/UnderConstruction-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
