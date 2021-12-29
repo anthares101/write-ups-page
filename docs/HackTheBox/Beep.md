@@ -30,7 +30,6 @@ PORT      STATE SERVICE
 
 Nmap done: 1 IP address (1 host up) scanned in 22.03 seconds
 ```
-
 ```bash
 ┌──(kali㉿kali)-[~]
 └─$ sudo nmap -sC -sV -p22,25,80,110,111,143,443,879,993,995,3306,4190,4445,4559,5038,10000 10.10.10.7
