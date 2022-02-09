@@ -331,7 +331,7 @@ The reason why I decided to install Traefik by hand is because by default it won
 
 Before you ask, K3S use something called Klipper to create a load balancers inside the cluster. Normally a load balancer is deployed outside but K3S do it this way to allow the usage of load balancer services easier.
 
-Adding `externalTrafficPolicy: Local`  ([More information](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip)) to the spec section of the Traefik service will solve the problem but if we let K3S deploy it, our changes won’t persist a reboot. Also I want to add a `nodeSelector` configuration to make sure Traefik is scheduled in the master node.
+Adding `externalTrafficPolicy: Local`  ([More information](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip){:target="_blank"}) to the spec section of the Traefik service will solve the problem but if we let K3S deploy it, our changes won’t persist a reboot. Also I want to add a `nodeSelector` configuration to make sure Traefik is scheduled in the master node.
 
 To install Traefik with this little configuration change I just took the `traefik.yaml` file that K3S normally uses and modified it a bit:
 
@@ -437,17 +437,13 @@ I created a Telegram bot and configured Grafana to send alerts to me using it. I
 
 #### Network Policies
 
-Checking K3S documentation I noticed that the default [CNI](https://github.com/containernetworking/cni) was Flannel. Flannel is really cool because is pretty fast but is not able to handle network policies. I really want to limit the conections a pod can do, specially if the pod is accessed from the internet. I normally edit the iptables rules in my Raspberry Pi to handle this restrictions in Docker but since Kubernetes has network policies to handle this stuff I want to use them.
+Checking K3S documentation I noticed that the default [CNI](https://github.com/containernetworking/cni){:target="_blank"} was Flannel. Flannel is really cool because is pretty fast but is not able to handle network policies. I really want to limit the conections a pod can do, specially if the pod is accessed from the internet. I normally edit the iptables rules in my Raspberry Pi to handle this restrictions in Docker but since Kubernetes has network policies to handle this stuff I want to use them.
 
 I researched my options here and I found this post about installing Canal: 
 
 <figure><a href="https://dev.to/jmarhee/network-policies-with-canal-and-flannel-on-k3s-11oe" class="bookmark source" target="_blank"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Network Policies with Canal and Flannel on K3s</div><div class="bookmark-description">Flannel is a popular Container Network Interface (CNI) addon for Kubernetes, however, it does not provide (because it is Layer 3 network focused on transport between hosts, rather than container networking with the host) robust support for NetworkPolicy resources. Now, the policy features from another popular CNI, Calico, can be imported to Flannel using Canal.</div></div><div class="bookmark-href"><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--E8ak4Hr1--/c_limit,f_auto,fl_progressive,q_auto,w_32/https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico" class="icon bookmark-icon"/>https://dev.to/jmarhee/network-policies-with-canal-and-flannel-on-k3s-11oe</div></div><img src="https://dev.to/social_previews/article/944758.png" class="bookmark-image"/></a></figure>
 
-The idea here is to keep using Flannel as CNI but install Calico as Network Policy manager.
-
-The installation is pretty easy, just get the manifest:
-
-[](https://docs.projectcalico.org/manifests/canal.yaml)
+The idea here is to keep using Flannel as CNI but install Calico as Network Policy manager. For installation just get the manifest [here](https://docs.projectcalico.org/manifests/canal.yaml){:target="_blank"}.
 
 And search the environment variable called `CALICO_IPV4POOL_CIDR` that is commented. Since I’m installing Canal in K3S I need to uncomment the variable and set its value to `10.42.0.0/16`, what is the default Pod CIDR that K3S uses.
 
