@@ -473,7 +473,7 @@ The manifest need a little tweak to work with ARM, it is necessary to look for a
 
 Only one thing left for certificates, cert-manager need you to configure issuers to know how and where to ask for certificates. You can check how to create an Issuer in the cert-manager documentation.
 
-I created an issuer with the  `ClusterIssuer` kind instead of the `Issuer`, because that way, the Issuer would be able to work in all the namespaces, and Let’s Encrypt  as the issuer to use. This issuer was configured to use a HTTP challenge in the port 80 that allows Let’s Encrypt to verify that the domain is mine.
+I created an issuer with the  `ClusterIssuer` kind instead of `Issuer`, that way the issuer would be able to work in all the namespaces, and Let's Encrypt as the CA to use. This issuer was configured to use a HTTP challenge in the port 80 that allows Let's Encrypt to verify that the domain is mine.
 
 I will show you what changes to make to an ingress to ask for a certificates to the configured issuer:
 
@@ -526,7 +526,7 @@ To use this system, the only thing really needed is a Cloudflare account and a d
 
 <figure><a href="https://github.com/anthares101/k3s-pi-cluster-charts/tree/master/cloudflared" class="bookmark source" target="_blank"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">GitHub - anthares101/k3s-pi-cluster-charts/cloudflared</div><div class="bookmark-description">A place for my Helm charts! Contribute to anthares101/k3s-pi-cluster-charts development by creating an account on GitHub.</div></div><div class="bookmark-href"><img src="https://github.com/favicon.ico" class="icon bookmark-icon"/>https://github.com/anthares101/k3s-pi-cluster-charts</div></div><img src="https://opengraph.githubassets.com/7044e1dfe81c940e6e18136248081ba4e4d4cee21d021591181bb7cdd0bf25b1/anthares101/k3s-pi-cluster-charts" class="bookmark-image"/></a></figure>
 
-I almost forgot, remember the HTTP challenge I used for getting the certificates with cert-manager? Well if I close the router ports obviously this stops working, there is a solution though. Let’s Encrypt allows another method for validation and it is called `dns01` in cert-manager:
+I almost forgot, remember the HTTP challenge I used for getting the certificates with cert-manager? Well if I close the router ports obviously this stops working, there is a solution though. Let's Encrypt allows another method for validation and it is called `dns01` in cert-manager:
 
 <figure><a href="https://cert-manager.io/docs/configuration/acme/dns01/cloudflare/" class="bookmark source" target="_blank"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Cloudflare</div><div class="bookmark-description">To use Cloudflare, you may use one of two types of tokens. API Tokens allow application-scoped keys bound to specific zones and permissions, while API Keys are globally-scoped keys that carry the same permissions as your account. API Tokens are recommended for higher security, since they have more restrictive permissions and are more easily revocable.</div></div><div class="bookmark-href"><img src="https://cert-manager.io/favicons/favicon.ico" class="icon bookmark-icon"/>https://cert-manager.io/docs/configuration/acme/dns01/cloudflare/</div></div></a></figure>
 
