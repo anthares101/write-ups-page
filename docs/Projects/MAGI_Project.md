@@ -162,7 +162,7 @@ The only problem right now is that the IP address for each Raspberry Pi will be 
 
 My idea is to create an ansible playbook to make all the initial setup of the cluster, that way if a terminal failure happens I can just get everything setup in the blink of an eye.
 
-But as I said above, the Raspberrys will have a random IP in the first boot so I will have to connect to them one by one to setup an static IP address and hostnames. After that, we can add SSH key authentication and from there I can start with the playbook to setup everything.
+But as I said above, the Raspberrys will have a random IP in the first boot so I will have to connect to them one by one to setup an static IP address and hostnames. After that, I can add SSH key authentication and from there I can start with the playbook to setup everything.
 
 I know it is not perfect because if something goes wrong and I need to reinstall from a clean SD card, I will need to do this whole process of connecting to the Raspberry and make the very first setup by hand before I can use the playbook but I think it is ok for me.
 
@@ -221,7 +221,7 @@ This page shows what parameters to use in order to customize the installation:
 
 <figure><a href="https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/" class="bookmark source" target="_blank"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">K3s Server Configuration Reference</div><div class="bookmark-description">In this section, you&#x27;ll learn how to configure the K3s server. Throughout the K3s documentation, you will see some options that can be passed in as both command flags and environment variables. For help with passing in options, refer to How to Use Flags and Environment Variables.</div></div><div class="bookmark-href"><img src="https://rancher.com/docs/img/favicon.png" class="icon bookmark-icon"/>https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/</div></div><img src="https://rancher.com/docs/img/logo-square.png" class="bookmark-image"/></a></figure>
 
-Before starting with the installation I will add this parameters into the `/boot/cmdline.txt` file of every Pi to make sure the containers works as expected:
+Before starting with the installation I will add this parameters into the `/boot/cmdline.txt` file of every Pi to make sure the containers work as expected:
 
 ```
 cgroup_memory=1 cgroup_enable=memory
@@ -235,7 +235,7 @@ Now we are ready to install K3S in the master node. Since I want to use Promethe
 ./k3s_install.sh --no-deploy metrics-server,traefik
 ```
 
-Once this finished, make sure you get the token for the workers nodes: `/var/lib/rancher/k3s/server/node-token` and also the `kubeconfig` file to be able to manage your cluster: `/etc/rancher/k3s/k3s.yaml`.
+Once this finish, make sure you get the token for the workers nodes: `/var/lib/rancher/k3s/server/node-token` and also the `kubeconfig` file to be able to manage your cluster: `/etc/rancher/k3s/k3s.yaml`.
 
 #### Worker nodes
 
@@ -255,7 +255,7 @@ For persistent volume provisioning I don’t really want to rely in the local pa
 
 To be honest the configuration of the a NFS server was easier than I expected. Just install `nfs-kernel-server` package and prepare a share folder to use.
 
-In the `/etc/exports` is where you have to configure the share for NFS and also that IPs addreses can access it. I will let here a little example:
+In the `/etc/exports` is where you have to configure the share for NFS and also the IPs addreses that can access it. I will let here a little example:
 
 ```
 /home/pi/Shared MASTER_IP(rw,fsid=0,all_squash,async,no_subtree_check,anonuid=1000,anongid=1000) WORKER1_IP(rw,fsid=0,all_squash,async,no_subtree_check,anonuid=1000,anongid=1000) WORKER2_IP(rw,fsid=0,all_squash,async,no_subtree_check,anonuid=1000,anongid=1000)
