@@ -59,6 +59,7 @@ Nmap done: 1 IP address (1 host up) scanned in 16.23 seconds
 ```
 
 Interesting, we have some things here:
+
 - **Ports 80 and 443:** IIS web server.
 - **Port 3389:** Remote desktop.
 - **Port 5985:** Winrm service.
@@ -233,6 +234,7 @@ int main()
 ```
 
 To compile it `mingw-w64` gives two options:
+
 - **i686-w64-mingw32-gcc:** for 32 bit Windows.
 - **x86_64-w64-mingw32-gcc:** for 64 bit Windows.
 
