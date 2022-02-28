@@ -235,8 +235,8 @@ int main()
 
 To compile it `mingw-w64` gives two options:
 
-- **i686-w64-mingw32-gcc:** for 32 bit Windows.
-- **x86_64-w64-mingw32-gcc:** for 64 bit Windows.
+- **i686-w64-mingw32-gcc** for 32 bit Windows.
+- **x86_64-w64-mingw32-gcc** for 64 bit Windows.
 
 I went with the 64 bits compiler, if something goes wrong I will use the other:
 
