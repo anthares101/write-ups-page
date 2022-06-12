@@ -1,6 +1,5 @@
 ---
 description: Baby Ninja Jinja challenge from HackTheBox write up.
-password: HTB{b4by_ninj4s_d0nt_g3t_qu0t3d_0r_c4ughT}
 ---
 
 # Baby Ninja Jinja

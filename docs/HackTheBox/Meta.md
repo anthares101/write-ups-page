@@ -1,6 +1,5 @@
 ---
 description: Meta box from HackTheBox write up.
-password: 22dcee4023c68244bf3b39034baf9932
 ---
 
 # Meta

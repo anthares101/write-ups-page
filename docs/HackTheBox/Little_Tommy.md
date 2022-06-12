@@ -1,7 +1,6 @@
 ---
 title: Little Tommy
 description: Little Tommy challenge from HackTheBox write up.
-password: HTB{I_am_so_heaped_up_right_now}
 ---
 
 # Little Tommy <a href='/assets/resources/HackTheBox/LittleTommy-resources.zip' title="Download resources"> :material-folder-zip:{:alt="Download resources"} </a>
