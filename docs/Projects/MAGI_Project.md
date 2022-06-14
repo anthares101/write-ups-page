@@ -335,7 +335,7 @@ Adding `externalTrafficPolicy: Local`  ([More information](https://kubernetes.io
 
 To achieve this little configuration change, we can create a file called `traefik-config.yaml` in the same location as the manifests:
 
-```bash
+```yaml
 apiVersion: helm.cattle.io/v1
 kind: HelmChartConfig
 metadata:
