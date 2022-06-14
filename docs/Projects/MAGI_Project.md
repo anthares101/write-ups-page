@@ -229,10 +229,10 @@ cgroup_memory=1 cgroup_enable=memory
 
 #### Master node
 
-Now we are ready to install K3S in the master node. Since I want to use Prometheus to get the metrics from the nodes instead of the typical Kubenretes metric-server and modify how the ingress controller (Traefik) is configured I will use `-no-deploy metrics-server,traefik` to tell K3S to not deploy those components:
+Now we are ready to install K3S in the master node. Since I want to use Prometheus to get the metrics from the nodes instead of the typical Kubernetes metric-server I will use `-no-deploy metrics-server` to tell K3S to not deploy this component:
 
 ```bash
-./k3s_install.sh --no-deploy metrics-server,traefik
+./k3s_install.sh --no-deploy metrics-server
 ```
 
 Once this finish, make sure you get the token for the workers nodes: `/var/lib/rancher/k3s/server/node-token` and also the `kubeconfig` file to be able to manage your cluster: `/etc/rancher/k3s/k3s.yaml`.
@@ -327,69 +327,32 @@ After a bit, K3S will deploy all the components of the provider, including a sto
 
 #### Traefik custom install
 
-The reason why I decided to install Traefik by hand is because by default it won’t be able to get the real IP address of the clients because of the Traefik LoadBalancer configuration.
+The reason why I decided to modify the Traefik configuration is because by default, it won’t be able to get the real IP address of the clients because of the Traefik LoadBalancer configuration.
 
-Before you ask, K3S use something called Klipper to create a load balancers inside the cluster. Normally a load balancer is deployed outside but K3S do it this way to allow the usage of load balancer services easier.
+Before you ask, K3S use something called Klipper to create a load balancers inside the cluster. Normally, a load balancer is deployed outside but K3S do it this way to allow the usage of load balancer services easier.
 
-Adding `externalTrafficPolicy: Local`  ([More information](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip){:target="_blank"}) to the spec section of the Traefik service will solve the problem but if we let K3S deploy it, our changes won’t persist a reboot. Also I want to add a `nodeSelector` configuration to make sure Traefik is scheduled in the master node.
+Adding `externalTrafficPolicy: Local`  ([More information](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip){:target="_blank"}) to the spec section of the Traefik service will solve the problem but if I edit this option in the manifest K3S deploys, our changes won’t persist a reboot. Also I want to add a `nodeSelector` configuration to make sure Traefik is scheduled in the master node.
 
-To install Traefik with this little configuration change I just took the `traefik.yaml` file that K3S normally uses and modified it a bit:
+To achieve this little configuration change, we can create a file called `traefik-config.yaml` in the same location as the manifests:
 
 ```bash
----
 apiVersion: helm.cattle.io/v1
-kind: HelmChart
-metadata:
-  name: traefik-crd
-  namespace: kube-system
-spec:
-  chart: https://%{KUBERNETES_API}%/static/charts/traefik-crd-10.3.001.tgz
----
-apiVersion: helm.cattle.io/v1
-kind: HelmChart
+kind: HelmChartConfig
 metadata:
   name: traefik
   namespace: kube-system
 spec:
-  chart: https://%{KUBERNETES_API}%/static/charts/traefik-10.3.001.tgz
-  set:
-    global.systemDefaultRegistry: ""
   valuesContent: |-
     service:
       spec:
         externalTrafficPolicy: Local
-    rbac:
-      enabled: true
-    ports:
-      websecure:
-        tls:
-          enabled: true
-    podAnnotations:
-      prometheus.io/port: "8082"
-      prometheus.io/scrape: "true"
-    providers:
-      kubernetesIngress:
-        publishedService:
-          enabled: true
-    priorityClassName: "system-cluster-critical"
-    image:
-      name: "rancher/mirrored-library-traefik"
     nodeSelector:
       node-type: master
-    tolerations:
-    - key: "CriticalAddonsOnly"
-      operator: "Exists"
-    - key: "node-role.kubernetes.io/control-plane"
-      operator: "Exists"
-      effect: "NoSchedule"
-    - key: "node-role.kubernetes.io/master"
-      operator: "Exists"
-      effect: "NoSchedule"
 ```
 
 And why would I want to do all this may you ask? Why I need the real IP of the clients? Simple, for IP filtering. Using ingresses to access the services in the cluster is great so to expose something to the internet make sense to expose the Traefik LoadBalancer and make Traefik handle the requests. The problem of this approach is that anyone from the internet could reach private services what is not good.
 
-With the configuration change I made, now I can create a traefik middleware for all the ingresses I want to be private to prevent traffic from the internet to go to them:
+With the configuration change I made, now I can create a Traefik middleware for all the ingresses I want to be private to prevent traffic from the internet to go to them:
 
 ```yaml
 apiVersion: traefik.containo.us/v1alpha1
