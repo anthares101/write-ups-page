@@ -6,7 +6,7 @@ hide: navigation, toc
 
 I will put here all my write ups from TryHackMe, HackTheBox, CTFs... If you want more, I have [this](https://github.com/anthares101/my-cybersecurity-notes){:target="_blank"} repository with useful information that I have been collecting while I learn.
 
-Also I would like to invite you to [Raptor Blog](https://blog.anthares101.com/). There, I will post cool articles about cybsersecurity like, how to perform certain attacks or speaking about cool tools that can be used for certain tasks, and also I would write about personal projects I make in my free time.
+Also, I would like to invite you to [:custom-flag: Raptor Blog](https://blog.anthares101.com/){:target="_blank"}. There, I will post cool articles about cybsersecurity like, how to perform certain attacks or speaking about cool tools that can be used for certain tasks, and also I would write about personal projects I make in my free time.
 
 # A bit about me
 
