@@ -1,6 +1,5 @@
 ---
 description: Catch box from HackTheBox write up.
-password: 7622491752cc4fef1be05a06281189f8
 ---
 
 # Catch
