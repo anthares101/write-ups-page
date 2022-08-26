@@ -1,6 +1,5 @@
 ---
 description: Retired box from HackTheBox write up.
-password: b5ec9d48a8c1915778b10b56497b881a
 ---
 
 # Retired
