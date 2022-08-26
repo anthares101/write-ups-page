@@ -1,6 +1,5 @@
 ---
 description: Paper box from HackTheBox write up.
-password: d7c2fceac37528a07e5816f1d072d430
 ---
 
 # Paper
