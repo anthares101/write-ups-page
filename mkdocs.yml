@@ -40,6 +40,8 @@ extra_css:
 
 extra:
   social:
+    - icon: custom/mypublicinbox
+      link: https://mypublicinbox.com/Anthares101
     - icon: fontawesome/brands/github
       link: https://github.com/anthares101
     - icon: fontawesome/brands/linkedin
