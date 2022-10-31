@@ -1,6 +1,5 @@
 ---
 description: Noter box from HackTheBox write up.
-password: bc424434b3ec3428db8c035d465e0965
 ---
 
 # Noter

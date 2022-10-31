@@ -1,6 +1,5 @@
 ---
 description: OpenSource box from HackTheBox write up.
-password: 64d140ed645a001e389ebcf2006468f6
 ---
 
 # OpenSource
