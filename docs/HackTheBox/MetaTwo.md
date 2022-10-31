@@ -313,7 +313,7 @@ ftp:x:107:65534::/srv/ftp:/usr/sbin/nologin
 
 I did the same thing with the Nginx configuration file `/etc/nginx/nginx.conf` to search for the Wordpress root directory:
 
-```yaml
+```
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
