@@ -199,7 +199,7 @@ Interesting Finding(s):
 [+] Elapsed time: 00:36:02
 ```
 
-The booking press plugin is vulnerable to SQL injection according to [this article](https://wpscan.com/vulnerability/388cd42d-b61a-42a4-8604-99b812db2357). First, we need a nonce that can be found searching for `bookingpress_front_get_category_services` in the source code of the page where the plugin code is embedded, in my case the nonce is `bf440717c1`. Now we can try the PoC:
+The booking press plugin is vulnerable to SQL injection according to [this article](https://wpscan.com/vulnerability/388cd42d-b61a-42a4-8604-99b812db2357){:target="_blank"}. First, we need a nonce that can be found searching for `bookingpress_front_get_category_services` in the source code of the page where the plugin code is embedded, in my case the nonce is `bf440717c1`. Now we can try the PoC:
 
 ```bash
 ┌──(kali㉿kali)-[~]
@@ -253,7 +253,7 @@ Inject SQL: select group_concat(0x7c, user_login, 0x7c, user_pass, 0x7c) from wp
 |admin|$P$BGrGrgf2wToBS79i07Rk9sN4Fzk.TV.|,|manager|$P$B4aNM28N0E.tMy/JIcnVMZbGcU16Q70|
 ```
 
-Using John and the Rockyou dictionary I got the password for `manager` user: `partylikearockstar`. After login into the Wordpress dashboard, looks like the user has really low privileges. The only thing we can do is to upload media files but should be enough. The Wordpress version is vulnerable to [CVE-2021-29447](https://blog.wpsec.com/wordpress-xxe-in-media-library-cve-2021-29447/) so we should be able to exfiltrate files from the server. This is the payload I created following the article, the objective is to get the `/etc/passwd` file:
+Using John and the Rockyou dictionary I got the password for `manager` user: `partylikearockstar`. After login into the Wordpress dashboard, looks like the user has really low privileges. The only thing we can do is to upload media files but should be enough. The Wordpress version is vulnerable to [CVE-2021-29447](https://blog.wpsec.com/wordpress-xxe-in-media-library-cve-2021-29447/){:target="_blank"} so we should be able to exfiltrate files from the server. This is the payload I created following the article, the objective is to get the `/etc/passwd` file:
 
 
 ```bash
@@ -504,7 +504,7 @@ I decided to try the credentials I just found to connect through SSH as the `jne
 
 ## Inside the machine as `jnelson`
 
-After getting the flag I saw something interesting right away, a directory called `.passpie`. A quick Google search revealed that this folder is part of a password manager called [Passpie](https://github.com/marcwebbie/passpie). According with the `ssh` directory inside, looks like we could get the `root` password from here somehow:
+After getting the flag I saw something interesting right away, a directory called `.passpie`. A quick Google search revealed that this folder is part of a password manager called [Passpie](https://github.com/marcwebbie/passpie){:target="_blank"}. According with the `ssh` directory inside, looks like we could get the `root` password from here somehow:
 
 ```bash
 jnelson@meta2:~/.passpie/ssh$ ls
