@@ -366,7 +366,7 @@ WINRM       10.10.10.169    5985   10.10.10.169     [-] MEGABANK\claude:Welcome1
 WINRM       10.10.10.169    5985   10.10.10.169     [+] MEGABANK\melanie:Welcome123! (Pwn3d!)
 ```
 
-Cool! We should be able to get a shell to the machine as `melanie` using `evil-winrm`. Another thing to note is that the system is not using Kerberos for authentication, just LDAP.
+Cool! We should be able to get a shell to the machine as `melanie` using `evil-winrm`.
 
 ## Privilege escalation to `ryan`
 
