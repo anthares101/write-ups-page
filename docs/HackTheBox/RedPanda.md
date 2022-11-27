@@ -1,6 +1,5 @@
 ---
 description: RedPanda box from HackTheBox write up.
-password: 72fa710b2639f298febbb0917f402182
 ---
 
 # RedPanda
