@@ -110,7 +110,7 @@ User www-data may run the following commands on bitlab:
 
 As I expected, we can execute the `git pull` command as `root` (The Deployer application code is using `sudo`). 
 
-There is something called hooks in Git that allows us to basically execute a task when something happens. We can execute as `root` the pull action, so creating a `post-merge` hook with this code:
+There is something called hooks in Git that allows us to basically execute a task when something happens. We can execute as `root` the pull action, so the code inside a `post-merge` hook will run as `root`:
 
 ```bash
 #! /bin/bash
