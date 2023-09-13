@@ -1,6 +1,5 @@
 ---
 description: Shoppy box from HackTheBox write up.
-password: 5a966246390f53871100e2246818752d
 ---
 
 # Shoppy

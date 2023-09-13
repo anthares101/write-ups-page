@@ -1,2 +1,1 @@
 mkdocs-section-index
-mkdocs-encryptcontent-plugin

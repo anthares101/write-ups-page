@@ -1,6 +1,5 @@
 ---
 description: Photobomb box from HackTheBox write up.
-password: 15609a409fb00ad3bd4ac4c50edfc3ad
 ---
 
 # Photobomb

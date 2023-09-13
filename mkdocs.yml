@@ -13,7 +13,7 @@ theme:
     logo: material/flag
   features:
     - navigation.tabs
-    #- navigation.instant
+    - navigation.instant
     - navigation.top
     - navigation.sections
   palette:
@@ -72,13 +72,3 @@ markdown_extensions:
 plugins:
   - section-index
   - search
-  - encryptcontent:
-      password_button: True
-      password_button_text: 'Unlock'
-      title_prefix: ''
-      summary: 'This content is protected'
-      placeholder: ''
-      encryption_info_message: 'Use the root flag as password'
-      remember_password: True
-      encrypted_something:
-            md-nav md-nav--secondary: [nav, class]

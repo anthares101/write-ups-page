@@ -1,6 +1,5 @@
 ---
 description: Ambassador box from HackTheBox write up.
-password: e84568051d9d0408989b2a266fc875a4
 ---
 
 # Ambassador

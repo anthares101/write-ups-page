@@ -1,6 +1,5 @@
 ---
 description: MetaTwo box from HackTheBox write up.
-password: e3f52881aea09f3a5a7781f9267610b1
 ---
 
 # MetaTwo

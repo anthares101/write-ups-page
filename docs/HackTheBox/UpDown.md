@@ -1,6 +1,5 @@
 ---
 description: UpDown box from HackTheBox write up.
-password: 2a0274ddc6d92fb010a4a65f088ce9c2
 ---
 
 # UpDown

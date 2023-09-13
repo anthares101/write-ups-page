@@ -1,6 +1,5 @@
 ---
 description: Support box from HackTheBox write up.
-password: e1f7a58ec764763886424a03d09053cf
 ---
 
 # Support
