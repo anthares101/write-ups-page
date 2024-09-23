@@ -35,9 +35,6 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-extra_css:
-  - assets/css/extra.css
-
 extra:
   social:
     - icon: custom/mypublicinbox
@@ -46,8 +43,8 @@ extra:
       link: https://github.com/anthares101
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/angelherediaperez
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/anthares101
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/anthares101
     - icon: custom/hackthebox
       link: https://app.hackthebox.com/profile/366635
     - icon: custom/ctftime
